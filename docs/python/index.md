@@ -4,7 +4,7 @@
 
 ---
 
-[直接前往学习PYTHON](basic/01_intro.md)
+[直接前往学习PYTHON](basic/01_introduction.md)
 
 ## 1️ 关于编程语言的学习顺序
 
@@ -55,4 +55,4 @@
     实际上，Python 更多时候是 **承载工具** 的形式出现的。例如，在运行一个大型模型时，我们通常通过 Python 来调用它，就像使用电脑必须通过鼠标或键盘一样——Python 就是我们的“调用手段”。
 
 
-[前往学习PYTHON](basic/01_intro.md)
+[前往学习PYTHON](basic/01_introduction.md)
