@@ -1,0 +1,70 @@
+/* =========================================================
+   1. 基础变量与深/浅模式适配
+========================================================= */
+:root {
+    --md-primary-fg-color: #3F51B5; 
+    --page-bg-color: #f5f7f9; 
+    --sidebar-bg-color: #f8f9fa;
+    /* 【核心修复】直接告诉主题顶栏高度是 4.5rem，让它自动对齐 */
+    --md-header-height: 3.0rem; 
+}
+
+[data-md-color-scheme="slate"] {
+    --page-bg-color: #121417; 
+    --sidebar-bg-color: #1a1c20;
+}
+
+body { background-color: var(--page-bg-color); }
+
+/* =========================================================
+   2. 顶栏拉伸 (与变量保持同步)
+========================================================= */
+.md-header__inner {
+    height: var(--md-header-height);
+    display: flex;
+    align-items: center;
+}
+
+/* 消除所有可能导致间隙翻倍的默认内边距 */
+.md-main__inner {
+    padding-top: 0 !important; 
+    margin-top: 0 !important;
+}
+
+/* =========================================================
+   3. 间隙精准控制：实现“精致小间隙”
+========================================================= */
+.md-sidebar { border: none !important; }
+
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary, 
+    .md-sidebar--secondary {
+        background-color: var(--sidebar-bg-color);
+        /* 侧边栏顶部留出一点点缝隙 */
+        padding-top: 0.6rem; 
+    }
+
+    .md-content {
+        background-color: var(--md-default-bg-color) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+        border-radius: 12px;
+        
+        /* 【最终旋钮】这个 0.6rem 决定了卡片离顶栏的距离 */
+        /* 如果觉得还是大了，就改成 0.4rem；如果觉得小了，就改成 0.8rem */
+        margin: 0.6rem 0.8rem 1.5rem 0.8rem !important; 
+        padding: 0 1.2rem;
+    }
+}
+
+/* =========================================================
+   4. 细节微调
+========================================================= */
+.md-logo img { height: 2.2rem; width: auto; }
+.md-search { padding-top: 0.2rem; }
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(128, 128, 128, 0.2); border-radius: 10px; }
+
+/* Admonition 提示框 */
+.md-typeset .admonition { border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
