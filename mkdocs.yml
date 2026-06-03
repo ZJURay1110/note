@@ -1,0 +1,133 @@
+# 1. 基本信息
+site_name: GIS & CS | CodingNote
+site_description: 一份关于GIS、CS 与 AI 的记录
+site_author: Lucas
+site_url: https://ldra857.github.io/CodingNote/
+edit_uri: edit/main/docs/
+
+# 2. 仓库链接（右上角会显示 GitHub 图标）
+repo_name: CodingNote
+repo_url: https://github.com/ldray857/CodingNote
+
+# 3. 主题配置
+theme:
+  name: material
+  language: zh
+  favicon: assets/favicon.png # 如果有图标可以放在这里
+  logo: assets/avatar.jpg
+  palette: 
+    # 自动切换深/浅模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo # 浙大蓝风格
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至浅色模式
+  features:
+    - navigation.tabs           # 顶部一级分类
+    - navigation.sections       # 侧边栏分组
+    - navigation.expand         # 默认展开
+    - navigation.top            # 回到顶部按钮
+    - navigation.footer         # 开启底部“上一页/下一页”导航栏
+    - search.suggest            # 搜索建议
+    - search.highlight          # 搜索关键词高亮
+    - content.code.copy         # 代码块一键复制
+extra_css:
+  - stylesheets/extra.css
+
+# 4. 导航栏配置（精准匹配最新文件目录）
+nav:
+  - 🏠 首页:
+      - 🚀 门户中心: index.md
+      - 📝 关于作者: about.md
+      - 🕒 快速导航:
+          - 工具配置: tools/index.md
+          - 电脑管理: CS/index.md
+          - AI 实践: AI/index.md
+          - GIS 工程: GIS/index.md
+          - Python 开发: python/index.md
+          - C/C++学习: c_cpp/index.md
+          - 前端开发: web_dev/index.md
+
+  - 🛠️ 工具使用与配置:
+      - 工具箱概览: tools/index.md
+      - IDE 配置 (VS Code/VS): 
+          - 概览: tools/as_IDE/01_intro.md
+          - Visual Studio 实践: tools/as_IDE/02_VS_01.md
+      - GIS 工具集:
+          - 环境概览: tools/as_GIS/01_intro.md
+          - GeoServer 部署: tools/as_GIS/02_GeoServer.md
+          - ArcGIS 全家桶: tools/as_GIS/03_ArcGIS_01.md
+          - ArcGIS Pro 进阶: tools/as_GIS/03_ArcGIS_02.md
+      - 计算机基础 (CS):
+          - 导论: tools/cs/01_introduction.md
+          - 文件管理: tools/cs/02_file_management.md
+
+  - 🖥️ 计算机管理与存储:
+      - 1 经验总结: CS/index.md
+      - 1.1 存储策略导论: CS/cs_store/01_intro.md
+      - 1.2 电脑C盘清理: CS/cs_store/02_电脑C盘清理.md
+      
+  - ⚡ AI 工程实践:
+      - 1 实践心得: AI/index.md
+      
+  - 💻 C & C++ 开发:
+      - 1 核心指南: c_cpp/index.md
+      
+  - 🐍 Python 编程:
+      - 1 Python 概览: python/index.md
+      - 2 基础语法:
+          - 2.1 简介: python/basic/01_intro.md
+          - 2.2 基础入门 01: python/basic/02_basic_01.md
+          - 2.3 基础入门 02: python/basic/02_basic_02.md
+          - 2.4 数据结构: python/basic/03_data.md
+          - 2.5 数值计算: python/basic/04_num.md
+          - 2.6 运算符: python/basic/05_cacul.md
+          - 2.7 布尔类型: python/basic/06_bool.md
+          - 2.8 字符串处理: python/basic/07_string.md
+          - 2.9 表达式专题: python/basic/08_表达式.md
+          - 2.10 内存机制 (RAM): python/basic/ram.md
+      
+  - 🌍 GIS 算法与开发:
+      - 1 GIS 概览: GIS/index.md
+      - 2 开发实践: 
+          - 2.1 基础入门: GIS/GIS_DEV/01_intro.md
+          - 2.2 空间数据发布 (上): GIS/GIS_DEV/04_data_distribute_1.md
+          - 2.3 空间数据发布 (下): GIS/GIS_DEV/04_data_distribute_2.md
+      
+  - 🌐 Web 开发工程:
+      - 1 开发概览: web_dev/index.md
+      - 2 JavaScript 专题:
+          - 2.1 简介: web_dev/JavaScipt/01_简介.md
+          - 2.2 基础: web_dev/JavaScipt/02_基础.md
+          - 2.3 数据类型: web_dev/JavaScipt/03数据类型.md
+          - 2.4 作用域和事件: web_dev/JavaScipt/04_作用域和事件.md
+          - 2.5 DOM 操作: web_dev/JavaScipt/DOM.md
+
+# 5. Markdown 增强插件（支持公式、警告框、复杂表格）
+markdown_extensions:
+  - admonition            # 提示框 !!! info
+  - pymdownx.details      # 折叠块 ??? note
+  - pymdownx.superfences  # 嵌套代码块
+  - pymdownx.inlinehilite # 行内代码高亮
+  - pymdownx.magiclink    # 自动识别链接
+  - pymdownx.arithmatex:  # 数学公式支持 (GIS 学术必备)
+      generic: true
+  - pymdownx.tasklist:    # 待办事项列表
+      custom_checkbox: true
+  - tables                # 标准表格
+  - toc:
+      permalink: true     # 标题右侧锚点
+
+# 6. 额外的 JS/CSS（用于渲染数学公式等）
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
